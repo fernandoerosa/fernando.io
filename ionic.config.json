@@ -1,0 +1,7 @@
+{
+  "name": "fernando.io",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
