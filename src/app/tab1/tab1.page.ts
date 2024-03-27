@@ -5,6 +5,7 @@ import { HeaderComponent } from '../header/header.component';
 import { UserInfoComponent } from '../user-info/user-info.component';
 import { BlogTileComponent } from '../blog-tile/blog-tile.component';
 import { FooterComponent } from '../footer/footer.component';
+import { Router } from '@angular/router';
 
 @Component({
   standalone: true,
@@ -14,5 +15,8 @@ import { FooterComponent } from '../footer/footer.component';
   imports: [IonHeader, IonToolbar, IonTitle, IonContent, ExploreContainerComponent, HeaderComponent, IonToggle, UserInfoComponent, BlogTileComponent, FooterComponent],
 })
 export class Tab1Page {
-  constructor() {}
+  constructor(private router: Router) {}
+  ngOnInit(): void {
+    console.log("======> w" + window.location.href);
+  }
 }
