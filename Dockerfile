@@ -13,8 +13,7 @@ FROM nginx:stable-alpine3.17-slim
 
 COPY --from=builder /app/www /usr/share/nginx/html
 
-COPY s1-app-nginx.conf /etc/nginx/conf.d
-COPY s2-app-nginx.conf /etc/nginx/conf.d
+COPY conf.d/*.conf /etc/nginx/conf.d/
 
 EXPOSE 80
 
