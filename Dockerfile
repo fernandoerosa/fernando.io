@@ -4,10 +4,11 @@ WORKDIR /app
 
 COPY . .
 
-RUN npm install
-RUN npm install -g @ionic/cli@latest 
-
-RUN ionic build --prod
+RUN npm install \
+    && npm install -g @ionic/cli@latest \
+    && ionic build --prod \
+    && ionic cap copy \
+    && ionic cap sync
 
 FROM nginx:stable-alpine3.17-slim
 
