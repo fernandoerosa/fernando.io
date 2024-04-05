@@ -1,0 +1,40 @@
+name: Build Android Release
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '20'
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Build Ionic app for production
+      run: npm run build
+
+    - name: Install Capacitor CLI
+      run: npm install @capacitor/cli
+
+    - name: Copy Capacitor assets
+      run: npx cap copy
+
+    - name: Build Android release
+      run: npx cap open android && ./gradlew assembleRelease -p android
+
+    - name: Archive APK
+      uses: actions/upload-artifact@v2
+      with:
+        name: release-apk
+        path: android/app/build/outputs/apk/release/app-release.apk
