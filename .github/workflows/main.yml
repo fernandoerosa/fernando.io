@@ -22,7 +22,7 @@ jobs:
       run: npm install
 
     - name: Build Ionic app for production
-      run: npm run build -- --prod
+      run: npm run build
 
     - name: Install Capacitor CLI
       run: npm install @capacitor/cli
