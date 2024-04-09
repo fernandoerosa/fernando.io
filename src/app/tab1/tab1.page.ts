@@ -1,5 +1,5 @@
 import { Component, signal } from '@angular/core';
-import { IonHeader, IonToolbar, IonTitle, IonContent, IonToggle, IonText, IonButton } from '@ionic/angular/standalone';
+import { IonHeader, IonToolbar, IonTitle, IonContent, IonToggle, IonText, IonButton, IonProgressBar } from '@ionic/angular/standalone';
 import { ExploreContainerComponent } from '../explore-container/explore-container.component';
 import { HeaderComponent } from '../header/header.component';
 import { UserInfoComponent } from '../user-info/user-info.component';
@@ -16,7 +16,21 @@ import { Blog } from '../interfaces/blog';
   providers: [
     BloggerService
   ],
-  imports: [IonText, IonHeader, IonToolbar, IonTitle, IonContent, ExploreContainerComponent, HeaderComponent, IonToggle, UserInfoComponent, BlogTileComponent, FooterComponent, IonButton],
+  imports: [
+    IonProgressBar, 
+    IonText,
+    IonHeader,
+    IonToolbar,
+    IonTitle,
+    IonContent,
+    ExploreContainerComponent,
+    HeaderComponent,
+    IonToggle,
+    UserInfoComponent,
+    BlogTileComponent,
+    FooterComponent,
+    IonButton,
+  ],
 })
 export class Tab1Page {
   posts: Array<Blog> = [];
@@ -27,9 +41,11 @@ export class Tab1Page {
   }
 
   fetchPosts() {
+    this.loading.set(true);
     this.service.getPosts()
       .subscribe({
         next: (e) => {
+          this.loading.set(false);
           this.posts = e.items;
           console.log(this.posts);
         },

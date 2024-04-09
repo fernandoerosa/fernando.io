@@ -1,8 +1,12 @@
 <app-header></app-header>
 <ion-content>
   <app-user-info/>
-  @for (item of posts; track $index) {
-    <app-blog-tile [content]="item.content" [published]="item.published" [title]="item.title"></app-blog-tile>
+  @if (loading()) {
+    <ion-progress-bar type="indeterminate"></ion-progress-bar>
+  } @else {
+    @for (item of posts; track $index) {
+      <app-blog-tile [content]="item.content" [published]="item.published" [title]="item.title"></app-blog-tile>
+    }
   }
-<app-footer></app-footer>
 </ion-content>
+<app-footer></app-footer>
