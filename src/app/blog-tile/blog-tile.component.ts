@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { IonText, IonButton } from "@ionic/angular/standalone";
 
 @Component({
@@ -8,10 +8,11 @@ import { IonText, IonButton } from "@ionic/angular/standalone";
   styleUrls: ['./blog-tile.component.scss'],
   imports: [IonButton, IonText]
 })
-export class BlogTileComponent  implements OnInit {
+export class BlogTileComponent {
+  @Input() title: string = "";
+  @Input() published: string = "";
+  @Input() content: string = "";
 
   constructor() { }
-
-  ngOnInit() {}
 
 }
