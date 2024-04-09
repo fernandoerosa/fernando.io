@@ -1,8 +1,19 @@
 <app-header></app-header>
 <ion-content>
   <app-user-info/>
-  @for (item of [1,1,1,1,1]; track $index) {
-    <app-blog-tile></app-blog-tile>
+  @for (item of posts; track $index) {
+    <section class="blog-tile">
+      <ion-text class="blog-title">
+        {{ item.title }}
+        <span>
+          {{ item.published }}
+        </span>
+      </ion-text>
+      <h6 class="blog-description">
+        
+      </h6>
+      <ion-button>Ler mais</ion-button>
+    </section>
   }
 <app-footer></app-footer>
 </ion-content>
