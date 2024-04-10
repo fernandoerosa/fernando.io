@@ -7,6 +7,7 @@ import { BlogTileComponent } from '../blog-tile/blog-tile.component';
 import { FooterComponent } from '../footer/footer.component';
 import { BloggerService } from '../services/blogger.service';
 import { Blog } from '../interfaces/blog';
+import { RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
   standalone: true,
@@ -30,6 +31,8 @@ import { Blog } from '../interfaces/blog';
     BlogTileComponent,
     FooterComponent,
     IonButton,
+    RouterLink, 
+    RouterLinkActive
   ],
 })
 export class Tab1Page {

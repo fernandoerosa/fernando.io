@@ -3,10 +3,11 @@
   <app-user-info/>
   @if (loading()) {
     <ion-progress-bar type="indeterminate"></ion-progress-bar>
+    <div style="height: 70%;"> </div>
   } @else {
     @for (item of posts; track $index) {
-      <app-blog-tile [content]="item.content" [published]="item.published" [title]="item.title"></app-blog-tile>
+      <app-blog-tile [routerLink]="['/blog-details', item.id]" [content]="item.content" [published]="item.published" [title]="item.title"></app-blog-tile>
     }
   }
+  <app-footer></app-footer>
 </ion-content>
-<app-footer></app-footer>

@@ -1,0 +1,9 @@
+<app-header></app-header>
+<ion-content>
+  @if (loading()) {
+    <ion-progress-bar type="indeterminate"></ion-progress-bar>
+  } @else {
+    <div class="blog-content" [innerHTML]="post?.content"></div>
+    <app-footer></app-footer>
+  }
+</ion-content>
