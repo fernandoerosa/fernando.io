@@ -1,12 +1,15 @@
-<section class="blog-tile">
-  <ion-text class="blog-title">
+<ion-card class="blog-tile">
+  <ion-card-header class="blog-title">
     {{ title }}
     <span>
       {{ published }}
     </span>
-  </ion-text>
-  <h6 class="blog-description">
-    {{ content.substring(0, 200) }}
-  </h6>
-  <ion-button>Ler mais</ion-button>
-</section>
+  </ion-card-header>
+  <div class="label">
+    @for (label of labels; track label) {
+      <ion-label>
+        {{ label }}
+      </ion-label>
+    }
+  </div>
+</ion-card>

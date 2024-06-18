@@ -1,21 +1,12 @@
-FROM node:20-alpine AS builder
-
-WORKDIR /app
-
-COPY . .
-
-RUN npm install \
-    && npm install -g @ionic/cli@latest \
-    && ionic build --prod \
-    && ionic cap copy \
-    && ionic cap sync
-
-FROM nginx:stable-alpine3.17-slim
-
-COPY --from=builder /app/www /usr/share/nginx/html
-
-COPY conf.d/*.conf /etc/nginx/conf.d/
-
-EXPOSE 80
-
-CMD ["nginx", "-g", "daemon off;"]
+FROM jenkins/jenkins:2.440.2-jdk17
+USER root
+RUN apt-get update && apt-get install -y lsb-release
+RUN curl -fsSLo /usr/share/keyrings/docker-archive-keyring.asc \
+  https://download.docker.com/linux/debian/gpg
+RUN echo "deb [arch=$(dpkg --print-architecture) \
+  signed-by=/usr/share/keyrings/docker-archive-keyring.asc] \
+  https://download.docker.com/linux/debian \
+  $(lsb_release -cs) stable" > /etc/apt/sources.list.d/docker.list
+RUN apt-get update && apt-get install -y docker-ce-cli
+USER jenkins
+RUN jenkins-plugin-cli --plugins "blueocean docker-workflow"

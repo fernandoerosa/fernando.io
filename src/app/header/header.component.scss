@@ -7,7 +7,6 @@
 
 .header-title {
     margin: auto;
-    text-align: left;
     
     ion-text {
         font-weight: 700;
@@ -15,10 +14,6 @@
 }
 
 .header-tabs {  
-    ul {
-        display: flex;
-        flex-direction: row;
-        gap: 50px;
-        align-items: center;
-    }
+    justify-content: space-around;
+    margin-top: 10px;
 }
