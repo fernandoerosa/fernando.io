@@ -1,0 +1,31 @@
+services:
+  fernando.io:
+    build: .
+    container_name: "fernando.io"
+    ports:
+      - 8100:8100
+    volumes:
+      - .:/usr/src/app
+    networks:
+      - rede-fernando
+    
+  postgres:
+    image: postgres:alpine3.19
+    container_name: "fernando"
+    environment:
+      POSTGRES_USER: fernando
+      POSTGRES_PASSWORD: fernando
+      POSTGRES_DB: fernando
+    ports:
+      - 3100:5432
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - rede-fernando
+
+networks:
+  rede-fernando:
+    driver: bridge
+
+volumes:
+  postgres_data:
