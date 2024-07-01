@@ -1,1 +1,1 @@
-ionic serve --host 0.0.0.0
+npx ionic serve --host 0.0.0.0
