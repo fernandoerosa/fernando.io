@@ -4,8 +4,8 @@ import { HeaderComponent } from '../header/header.component';
 import { UserInfoComponent } from '../user-info/user-info.component';
 import { BlogTileComponent } from '../blog-tile/blog-tile.component';
 import { FooterComponent } from '../footer/footer.component';
-import { BloggerService } from '../services/blogger.service';
-import { Blog } from '../interfaces/blog';
+import { BloggerService } from '../../services/blog/blogger.service';
+import { Blog } from '../../interfaces/blog';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({

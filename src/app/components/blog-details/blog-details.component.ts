@@ -3,9 +3,9 @@ import { ActivatedRoute } from '@angular/router';
 import { IonContent, IonProgressBar } from '@ionic/angular/standalone';
 import { FooterComponent } from "../footer/footer.component";
 import { HeaderComponent } from "../header/header.component";
-import { Blog } from '../interfaces/blog';
-import { BloggerService } from '../services/blogger.service';
-import { UserInfoComponent } from "../user-info/user-info.component";
+import { Blog } from 'src/app/interfaces/blog';
+import { BloggerService } from 'src/app/services/blog/blogger.service';
+import { UserInfoComponent } from '../user-info/user-info.component';
 
 @Component({
     standalone: true,
@@ -18,7 +18,9 @@ import { UserInfoComponent } from "../user-info/user-info.component";
     imports: [
         IonContent,
         IonProgressBar,
-        HeaderComponent, UserInfoComponent, FooterComponent
+        HeaderComponent, 
+        UserInfoComponent, 
+        FooterComponent
       ]
 })
 export class BlogDetailsComponent implements OnInit {
