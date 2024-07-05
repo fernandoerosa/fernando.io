@@ -3,6 +3,9 @@
   @if (loading()) {
     <ion-progress-bar type="indeterminate"></ion-progress-bar>
   } @else {
+    <ion-text class="blog-title">
+      {{ post?.title }}
+    </ion-text>
     <div class="blog-content" [innerHTML]="post?.content"></div>
     <app-footer></app-footer>
   }

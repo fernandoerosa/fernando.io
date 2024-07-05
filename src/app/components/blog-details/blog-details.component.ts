@@ -1,6 +1,6 @@
 import { Component, OnInit, signal } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { IonContent, IonProgressBar } from '@ionic/angular/standalone';
+import { IonContent, IonProgressBar, IonText } from '@ionic/angular/standalone';
 import { FooterComponent } from "../footer/footer.component";
 import { HeaderComponent } from "../header/header.component";
 import { Blog } from 'src/app/interfaces/blog';
@@ -16,12 +16,13 @@ import { UserInfoComponent } from '../user-info/user-info.component';
         BloggerService,
     ],
     imports: [
-        IonContent,
-        IonProgressBar,
-        HeaderComponent, 
-        UserInfoComponent, 
-        FooterComponent
-      ]
+      IonText, 
+      IonContent,
+      IonProgressBar,
+      HeaderComponent, 
+      UserInfoComponent, 
+      FooterComponent
+    ]
 })
 export class BlogDetailsComponent implements OnInit {
   id?: string;
