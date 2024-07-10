@@ -1,13 +1,94 @@
 <app-header></app-header>
 <ion-content>
-  <app-user-info/>
-  @if (loading()) {
-    <ion-progress-bar type="indeterminate"></ion-progress-bar>
-    <div style="height: 70%;"> </div>
-  } @else {
-    @for (item of posts; track $index) {
-      <app-blog-tile [routerLink]="['/blog-details', item.id]" [content]="item.content" [published]="item.published" [title]="item.title" [labels]="item.labels"></app-blog-tile>
-    }
-  }
+  <app-user-info />
+  <section class="stack-section">
+    <div class="stack-container">
+      <img src="assets/imgs/android.png" alt="Android">
+      <img src="assets/imgs/flutter.png" alt="Android">
+      <img src="assets/imgs/java.svg" alt="Java">
+      <img src="assets/imgs/typescript.png" alt="TypeScript">
+      <img src="assets/imgs/docker.png" alt="Docker">
+      <img src="assets/imgs/k8s.png" alt="Kubernetes">
+    </div>
+  </section>
+  <section class="info-section">
+    <ion-text class="info-container-text" color="secondary">
+      Ultimos Conteúdos
+    </ion-text>
+    <div class="info-container">
+      <ion-card class="item"></ion-card>
+      <ion-card class="item"></ion-card>
+      <ion-card class="item"></ion-card>
+    </div>
+  </section>
+  <section class="cv-section" id="cv-section">
+      <ion-accordion-group expand="inset">
+        <ion-accordion value="first">
+          <ion-item slot="header" color="light">
+            <ion-label>Experiências</ion-label>
+          </ion-item>
+          <div class="ion-padding" slot="content">
+            <div class="section" id="experiences">
+              <h2>Experiências</h2>
+              <div class="section-item">
+                <h3>Nome da Empresa</h3>
+                <p><strong>Posição:</strong> Cargo</p>
+                <p><strong>Duração:</strong> Mês/Ano - Mês/Ano</p>
+                <p><strong>Descrição:</strong> Descrição das responsabilidades e realizações.</p>
+              </div>
+            </div>
+          </div>
+        </ion-accordion>
+        <ion-accordion value="second">
+          <ion-item slot="header" color="light">
+            <ion-label>Cursos e Certificados</ion-label>
+          </ion-item>
+          <div class="ion-padding" slot="content">
+
+            <div class="section" id="courses-certificates">
+              <h2>Cursos e Certificados</h2>
+              <div class="section-item">
+                <h3>Nome do Curso/Certificado</h3>
+                <p><strong>Instituição:</strong> Nome da Instituição</p>
+                <p><strong>Duração:</strong> Mês/Ano - Mês/Ano</p>
+                <p><strong>Descrição:</strong> Descrição do curso ou certificado.</p>
+              </div>
+            </div>
+          </div>
+        </ion-accordion>
+        <ion-accordion value="third">
+          <ion-item slot="header" color="light">
+            <ion-label>Voluntariado</ion-label>
+          </ion-item>
+          <div class="ion-padding" slot="content">
+            <div class="section" id="volunteering">
+              <h2>Voluntariado</h2>
+              <div class="section-item">
+                <h3>Nome da Organização</h3>
+                <p><strong>Posição:</strong> Cargo</p>
+                <p><strong>Duração:</strong> Mês/Ano - Mês/Ano</p>
+                <p><strong>Descrição:</strong> Descrição das responsabilidades e realizações.</p>
+              </div>
+            </div>
+          </div>
+        </ion-accordion>
+        <ion-accordion value="fourty">
+          <ion-item slot="header" color="light">
+            <ion-label>Projetos</ion-label>
+          </ion-item>
+          <div class="ion-padding" slot="content">
+            <div class="section" id="projects">
+              <h2>Projetos</h2>
+              <div class="section-item">
+                <h3>Nome do Projeto</h3>
+                <p><strong>Descrição:</strong> Descrição do projeto.</p>
+                <p><strong>Links:</strong> <a href="#">Link para o projeto</a></p>
+              </div>
+            </div>
+          </div>
+        </ion-accordion>
+      </ion-accordion-group>
+  </section>
+  <section class="contact-section"></section>
   <app-footer></app-footer>
 </ion-content>

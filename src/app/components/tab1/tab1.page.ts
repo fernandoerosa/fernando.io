@@ -1,5 +1,5 @@
 import { Component, signal } from '@angular/core';
-import { IonHeader, IonToolbar, IonTitle, IonContent, IonToggle, IonText, IonButton, IonProgressBar } from '@ionic/angular/standalone';
+import { IonHeader, IonToolbar, IonTitle, IonContent, IonToggle, IonText, IonButton, IonProgressBar, IonCard, IonAccordion, IonAccordionGroup, IonLabel, IonItem } from '@ionic/angular/standalone';
 import { HeaderComponent } from '../header/header.component';
 import { UserInfoComponent } from '../user-info/user-info.component';
 import { BlogTileComponent } from '../blog/blog-tile/blog-tile.component';
@@ -16,7 +16,8 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
   providers: [
     BloggerService
   ],
-  imports: [
+  imports: [IonItem, IonLabel, IonAccordionGroup, IonAccordion, 
+    IonCard, 
     IonProgressBar, 
     IonText,
     IonHeader,
