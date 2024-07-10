@@ -128,3 +128,27 @@ ion-accordion.accordion-expanded {
 
     margin: 16px auto;
 }
+
+.contact-section {
+        width: 100%;
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 20px;
+        background: var(--ion-color-light);
+        box-shadow: 0 0 10px var(--ion-color-light-shade);
+
+  ion-card-title {
+    text-align: center;
+    color: var(--ion-color-primary);
+    padding: 16px;
+    font-weight: 700;
+  }
+    
+  ion-button {
+    padding: 16px;
+  }
+
+  ion-card {
+    margin: 25px;
+  }
+}
