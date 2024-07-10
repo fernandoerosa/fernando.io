@@ -10,8 +10,32 @@ import { RouterLink } from '@angular/router';
   imports:[IonToggle, IonIcon, IonText, IonButton, RouterLink]
 })
 export class HeaderComponent  implements OnInit {
+  
+  toggleInitState = false;
 
   constructor() { }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.initTheme();
+  }
+
+  initializeDarkPalette(isDark: boolean) {
+    this.toggleInitState = isDark;
+    this.toggleDarkPalette(isDark);
+  }
+
+  toggleChange(ev: any) {
+    this.toggleDarkPalette(ev.detail.checked);
+    window.localStorage?.setItem("theme", ev.detail.checked ? "dark" : "light");
+  }
+
+  toggleDarkPalette(shouldAdd: boolean) {
+    document.documentElement.classList.toggle('ion-palette-dark', shouldAdd);
+  }
+
+  private initTheme() {
+    const isDark = window.localStorage?.getItem("theme");
+
+    this.initializeDarkPalette(isDark === "dark");
+  }
 }
