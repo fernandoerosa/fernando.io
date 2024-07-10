@@ -2,7 +2,7 @@ import { Component, signal } from '@angular/core';
 import { IonHeader, IonToolbar, IonTitle, IonContent, IonToggle, IonText, IonButton, IonProgressBar } from '@ionic/angular/standalone';
 import { HeaderComponent } from '../header/header.component';
 import { UserInfoComponent } from '../user-info/user-info.component';
-import { BlogTileComponent } from '../blog-tile/blog-tile.component';
+import { BlogTileComponent } from '../blog/blog-tile/blog-tile.component';
 import { FooterComponent } from '../footer/footer.component';
 import { BloggerService } from '../../services/blog/blogger.service';
 import { Blog } from '../../interfaces/blog';

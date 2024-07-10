@@ -1,11 +1,11 @@
 import { Component, OnInit, signal } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { IonContent, IonProgressBar, IonText } from '@ionic/angular/standalone';
-import { FooterComponent } from "../footer/footer.component";
-import { HeaderComponent } from "../header/header.component";
 import { Blog } from 'src/app/interfaces/blog';
 import { BloggerService } from 'src/app/services/blog/blogger.service';
-import { UserInfoComponent } from '../user-info/user-info.component';
+import { HeaderComponent } from '../../header/header.component';
+import { FooterComponent } from '../../footer/footer.component';
+import { UserInfoComponent } from '../../user-info/user-info.component';
 
 @Component({
     standalone: true,
