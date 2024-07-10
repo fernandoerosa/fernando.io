@@ -1,8 +1,8 @@
 import { Component, signal } from '@angular/core';
-import { IonHeader, IonToolbar, IonTitle, IonContent, IonToggle, IonText, IonButton, IonProgressBar } from '@ionic/angular/standalone';
+import { IonHeader, IonToolbar, IonTitle, IonContent, IonToggle, IonText, IonButton, IonProgressBar, IonCard, IonAccordion, IonAccordionGroup, IonLabel, IonItem, IonInput, IonTextarea, IonCardContent, IonCardHeader, IonCardTitle } from '@ionic/angular/standalone';
 import { HeaderComponent } from '../header/header.component';
 import { UserInfoComponent } from '../user-info/user-info.component';
-import { BlogTileComponent } from '../blog-tile/blog-tile.component';
+import { BlogTileComponent } from '../blog/blog-tile/blog-tile.component';
 import { FooterComponent } from '../footer/footer.component';
 import { BloggerService } from '../../services/blog/blogger.service';
 import { Blog } from '../../interfaces/blog';
@@ -17,7 +17,17 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
     BloggerService
   ],
   imports: [
-    IonProgressBar, 
+    IonCardTitle, 
+    IonCardHeader, 
+    IonCardContent, 
+    IonTextarea, 
+    IonInput, 
+    IonItem, 
+    IonLabel, 
+    IonAccordionGroup, 
+    IonAccordion,
+    IonCard,
+    IonProgressBar,
     IonText,
     IonHeader,
     IonToolbar,
@@ -29,30 +39,14 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
     BlogTileComponent,
     FooterComponent,
     IonButton,
-    RouterLink, 
+    RouterLink,
     RouterLinkActive
   ],
 })
 export class Tab1Page {
-  posts: Array<Blog> = [];
-  loading = signal(false);
 
-  constructor(private service: BloggerService) {
-    this.fetchPosts();
+
+  constructor() {
   }
 
-  fetchPosts() {
-    this.loading.set(true);
-    this.service.getPosts()
-      .subscribe({
-        next: (e) => {
-          this.loading.set(false);
-          this.posts = e.items;
-          console.log(this.posts);
-        },
-        error: () => {
-          console.log("error");
-        }
-      });
-  }
 }
