@@ -5,24 +5,39 @@
     <div class="stack-container">
       <img src="assets/imgs/android.png" alt="Android">
       <img src="assets/imgs/flutter.png" alt="Android">
-      <img src="assets/imgs/java.svg" alt="Java">
+      <img src="assets/imgs/java.svg" alt="Java" style="border-radius: 12px;">
       <img src="assets/imgs/typescript.png" alt="TypeScript">
       <img src="assets/imgs/docker.png" alt="Docker">
       <img src="assets/imgs/k8s.png" alt="Kubernetes">
     </div>
   </section>
   <section class="info-section">
-    <ion-text class="info-container-text" color="secondary">
+    <!-- <ion-text class="info-container-text" color="secondary">
       Ultimos Conteúdos
-    </ion-text>
+    </ion-text> -->
     <div class="info-container">
-      <ion-card class="item"></ion-card>
-      <ion-card class="item"></ion-card>
-      <ion-card class="item"></ion-card>
+      <ion-card class="item" class="item" style="display: flex; align-items: center; justify-content: center;">
+        <ion-text style="color: var(--ion-color-secondary); font-weight: 900; font-size: xx-large;">
+          Aperta no Blog
+        </ion-text>
+      </ion-card>
+      <ion-card [routerLink]="['/blog-home']" class="item" style="display: flex; align-items: center; justify-content: center;">
+        <ion-text style="color: var(--ion-color-secondary); font-weight: 900; font-size: xx-large;">
+          Blog
+        </ion-text>
+      </ion-card>
+      <ion-card class="item" class="item" style="display: flex; align-items: center; justify-content: center;">
+        <ion-text style="color: var(--ion-color-secondary); font-weight: 900; font-size: xx-large;">
+          Aperta no Blog
+        </ion-text>
+      </ion-card>
     </div>
   </section>
   <section class="cv-section" id="cv-section">
-    <ion-text color="secondary"> Sobre mim </ion-text>
+    <ion-text color="primary"> Sobre mim </ion-text>
+    <p style="padding-bottom: 16px;">
+      Me chamo Fernando, tenho 22 anos, e sou entusiasta do mundo tech. Quando vi um código pela primeira vez, jurei que nunca iria ser um programador, e hoje estou aqui evoluindo a cada dia. Gosto muito de desenvolver soluções criativas para dores de clientes, e gosto de estar atento e participar de todos os setores da empresa, desde o front-end até o back-end. Hoje estou fortemente imerso no mundo Devops, desde o CI/CD até escalabilidade e distribuição com o Docker e Kubernetes.
+    </p>
     <ion-accordion-group expand="inset">
       <ion-accordion value="first">
         <ion-item slot="header" color="light">
@@ -32,10 +47,20 @@
           <div class="section" id="experiences">
             <h2>Experiências</h2>
             <div class="section-item">
-              <h3>Nome da Empresa</h3>
-              <p><strong>Posição:</strong> Cargo</p>
-              <p><strong>Duração:</strong> Mês/Ano - Mês/Ano</p>
-              <p><strong>Descrição:</strong> Descrição das responsabilidades e realizações.</p>
+              <h3>WMW</h3>
+              <p><strong>Posição:</strong> Desenvolvedor Mobile</p>
+              <p><strong>Duração:</strong> Atualmente</p>
+              <p><strong>Descrição:</strong> A frente de um projeto e-commerce B2B, validando e implementando fluxos de
+                CI/CD, arquitetura, estudo de mercado, modelagem de sistemas, infraestrutura e Kubernetes. Resposavel
+                pelo back-end e escalabilidade da solução.</p>
+            </div>
+            <div class="section-item">
+              <h3>Doubox</h3>
+              <p><strong>Posição:</strong> Desenvolvedor Mobile Pleno</p>
+              <p><strong>Duração:</strong> 1 Ano e 11 Meses</p>
+              <p><strong>Descrição:</strong> Trabalho com desenvolvimento de aplicações mobile para white labels
+                financeiras e de gestão de consumo para eventos, focado em uso de POS (terminais de pagamento)
+                utilizando Flutter e Android nativo em Java.</p>
             </div>
           </div>
         </div>
@@ -49,10 +74,10 @@
           <div class="section" id="courses-certificates">
             <h2>Cursos e Certificados</h2>
             <div class="section-item">
-              <h3>Nome do Curso/Certificado</h3>
-              <p><strong>Instituição:</strong> Nome da Instituição</p>
-              <p><strong>Duração:</strong> Mês/Ano - Mês/Ano</p>
-              <p><strong>Descrição:</strong> Descrição do curso ou certificado.</p>
+              <h3>Ciências da Computação</h3>
+              <p><strong>Instituição:</strong> Unisul</p>
+              <p><strong>Duração:</strong> Julho/2022</p>
+              <p><strong>Descrição:</strong> Faculdade de Ciências da Computação.</p>
             </div>
           </div>
         </div>
@@ -65,11 +90,52 @@
           <div class="section" id="volunteering">
             <h2>Voluntariado</h2>
             <div class="section-item">
-              <h3>Nome da Organização</h3>
-              <p><strong>Posição:</strong> Cargo</p>
-              <p><strong>Duração:</strong> Mês/Ano - Mês/Ano</p>
-              <p><strong>Descrição:</strong> Descrição das responsabilidades e realizações.</p>
+              <h3>Senac - Evento DevTec 2024</h3>
+              <p><strong>Posição:</strong> Professor</p>
+              <p><strong>Descrição:</strong>"Na minha máquina roda!! 😎". Depois de falar isso 50 vezes por dia, decidi
+                fazer uma palestra sobre o assunto, mostrando como o Docker pode ajudar a resolver esse problema.
+
+                Lembranças de um grande evento na incrível faculdade Senac Santa Catarina. Mais um DevTec para a conta,
+                com muitas emoções e aprendizados nesse dia!
+
+                Tive a oportunidade de conhecer e conversar com grandes profissionais e compartilhar experiências, além
+                de ter sido um dos hosts do evento junto com meus brothers Igor Figueredo Roussenq, Diogo Moretti e o
+                belíssimo Ranieri Santos, que, junto com o Senac, proporcionaram um evento incrível!!
+
+                ❤️ Fica um abraço e um beijo a todos os amigos que fiz nesse dia: Eduardo Frota Vicentini, Cláudio
+                Raposo, Afonso Pacifer, Gabs Ferreira, Eduardo Dandolini, Pacifique Cishiku Mukuna, Walter Coan ❤️.
             </div>
+            <div class="section-item">
+              <h3>Senac - Evento DevTec 2023</h3>
+              <p><strong>Posição:</strong> Professor</p>
+              <p><strong>Descrição:</strong>
+                Palestra realizada em um dos maiores evento de tecnologia em Tubarão- SC na faculdade Senac!
+
+                A primeira de muitas palestra que irão vir por aí, falei sobre um tópico bem curioso “Coisas nada a ver com programação que ajudam na programação”, falando sobre o dia a dia de um desenvolvedor, trabalho em equipe resolução de conflitos e como lidar com o enorme mundo da programação.
+                
+                Um grande desafio e uma baita experiência foram conquistados nesse dias, deixando o sentimento de quero mais no final.
+              </div>
+            <div class="section-item">
+              <h3>Senac - Senac Coding - Apoio ao RS</h3>
+              <p><strong>Posição:</strong> Professor</p>
+              <p><strong>Descrição:</strong>
+                Mais uma palestra em um evento incrível no Senac, dessa fez uma talk realizada com mais 3 grandes profissionais de grandes empresas, falamos sobre o ponto de vista do primeiro estágio e os primeiros contatos com a tecnologia. Passando também por dicas de como conseguir o sonhado primeiro estágio de dev.
+              </div>
+            <div class="section-item">
+              <h3>Senac - Senac Coding</h3>
+              <p><strong>Posição:</strong> Professor</p>
+              <p><strong>Descrição:</strong>
+                Durante meu trabalho voluntário, tive a oportunidade de ministrar um mini curso sobre Docker, focado em conceitos iniciais e práticas para isolar aplicações. O curso abrangeu os seguintes tópicos:
+
+                - Introdução ao Docker e sua importância na modernização de aplicações.
+                - Configuração e instalação do Docker.
+                - Criação e gerenciamento de containers.
+                - Conceitos de imagens e containers Docker.
+                - Introdução a Docker Compose para orquestração de múltiplos containers.
+                - Boas práticas para isolamento de aplicações e ambientes de desenvolvimento.
+                
+                Este projeto me permitiu compartilhar conhecimentos técnicos com a comunidade, ajudando desenvolvedores e profissionais de TI a adotarem tecnologias de containerização para melhorar a eficiência e a escalabilidade de seus projetos.
+              </div>
           </div>
         </div>
       </ion-accordion>
@@ -81,9 +147,9 @@
           <div class="section" id="projects">
             <h2>Projetos</h2>
             <div class="section-item">
-              <h3>Nome do Projeto</h3>
-              <p><strong>Descrição:</strong> Descrição do projeto.</p>
-              <p><strong>Links:</strong> <a href="#">Link para o projeto</a></p>
+              <h3>SOS RS</h3>
+              <p><strong>Descrição:</strong> Auxílio RS: Projetos de Resposta a Emergências por Chuvas e Alagamentos .</p>
+              <p><strong>Links:</strong> <a href="https://github.com/SOS-RS/backend"> Github</a></p>
             </div>
           </div>
         </div>

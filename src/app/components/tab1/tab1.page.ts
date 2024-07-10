@@ -44,25 +44,9 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
   ],
 })
 export class Tab1Page {
-  posts: Array<Blog> = [];
-  loading = signal(false);
 
-  constructor(private service: BloggerService) {
-    this.fetchPosts();
+
+  constructor() {
   }
 
-  fetchPosts() {
-    this.loading.set(true);
-    this.service.getPosts()
-      .subscribe({
-        next: (e) => {
-          this.loading.set(false);
-          this.posts = e.items;
-          console.log(this.posts);
-        },
-        error: () => {
-          console.log("error");
-        }
-      });
-  }
 }
